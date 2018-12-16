@@ -32,7 +32,8 @@ RUN rustup target add armv7-unknown-linux-gnueabihf
 RUN cargo install cargo-deb
 RUN cargo install just
 
-ENV PKG_CONFIG_ALLOW_CROSS=1 \
+ENV PKG_CONFIG_PATH=/usr/share/pkgconfig \
+    PKG_CONFIG_ALLOW_CROSS=1 \
     PKG_CONFIG_LIBDIR=/usr/lib/${CROSS_TRIPLE}/pkgconfig/ \
     CARGO_TARGET_ARMV7_UNKNOWN_LINUX_GNUEABIHF_LINKER=arm-linux-gnueabihf-gcc \
     CARGO_TARGET_ARMV7_UNKNOWN_LINUX_GNUEABIHF_STRIP=arm-linux-gnueabihf-strip
