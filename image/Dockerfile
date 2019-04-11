@@ -15,7 +15,7 @@ RUN dpkg --add-architecture armhf && \
     libc6-dev \
     gcc-${CROSS_TRIPLE} \
     g++-${CROSS_TRIPLE} \
-    libwebkit2gtk-4.0-dev:armhf
+    libwebkit2gtk-4.0-dev
 
 RUN ln -s /usr/bin/${CROSS_TRIPLE}-strip /usr/bin/cross-strip
 
@@ -27,7 +27,7 @@ RUN curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain ${RUST_VERSION
 
 ENV PATH=/root/.cargo/bin:$PATH
 
-RUN rustup target add armv7-unknown-linux-gnueabihf
+RUN rustup target add armv7-unknown-linux-musleabihf
 
 RUN cargo install cargo-deb
 RUN cargo install just
