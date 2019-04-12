@@ -6,3 +6,10 @@ authors = ["Geoff Shannon <geoffpshannon@gmail.com>"]
 [dependencies]
 signal-hook = "0.1.8"
 web-view = "0.4.0"
+
+[package.metadata.deb]
+revision = "1"
+depends = "libwebkit2gtk-4.0-37 (>= 2.18.6-1)"
+assets = [
+    ["target/release/display", "usr/bin/", "755"],
+]
