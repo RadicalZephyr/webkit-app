@@ -1,7 +1,7 @@
 #![windows_subsystem = "windows"]
 
-extern crate signal_hook;
-extern crate web_view;
+use signal_hook;
+use web_view;
 
 use std::{env, thread};
 
